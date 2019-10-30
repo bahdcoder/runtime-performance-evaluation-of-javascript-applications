@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Find Number squares.</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <style>
+        * {
+            border-radius: 0% !important;
+        }
+
+        .box {
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            border: 4px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-5">Web workers</h1>
+
+        <div class="row justify-content-center mb-5">
+            <button class="btn btn-info" onclick="squareSlowly()">
+                Square slowly
+            </button>
+    
+            <button class="btn btn-info ml-3" onclick="squareWithWebWorker()">
+                Square with web worker
+            </button>
+        </div>
+        
+        <div id="boxes" class="d-flex flex-wrap">
+
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

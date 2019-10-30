@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Optimize Javascript Execution</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <style>
+        * {
+            border-radius: 0% !important;
+        }
+
+        h1 {
+            cursor: pointer;
+        }
+
+        .list-group-item {
+            font-size: 5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5 mb-5" title="reset" onclick="reset()">
+            Javascript Sorter
+        </h1>
+
+        <div class="row justify-content-center mb-5">
+            <button class="btn btn-info" onclick="sortSlow()">
+                Sort with slow function
+            </button>
+    
+            <button class="btn btn-info ml-3" onclick="sortFast()">
+                Sort with fast function
+            </button>
+        </div>
+    
+        <ul id='list' class="list-group"></ul>
+    </div>
+
+    <script>
+        const items = ['🥚', '🐔']
+        const list = document.getElementById('list')
+
+        function render(items) {
+
+            list.innerHTML = ''
+
+            items.forEach(item => {
+                const listItem = document.createElement('li')
+
+                listItem.classList.add('list-group-item')
+
+                listItem.innerHTML = (item)
+
+                list.appendChild(listItem)
+            })
+        }
+
+        function reset() {
+            render(items)
+        }
+
+        function sortSlow() {
+            // Go through the past 1000 years and try to find out where the
+            // chicken and egg came from
+            [...Array(1000).keys()].forEach(year => {
+                console.log(`Performing the chicken and egg check for the year ${year}`)
+            })
+
+            render(items.sort())
+        }
+
+        function sortFast() {
+            render(items.sort())
+        }
+
+        render(items)
+
+    </script>
+</body>
+</html>
